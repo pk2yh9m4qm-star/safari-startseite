@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Start</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="start-page">
+      <section class="workspace" aria-label="Startseite">
+        <div class="welcome">
+          <p id="salutation">Guten Abend, Yannis.</p>
+          <h1 id="message">Ein guter Gedanke darf klein anfangen.</h1>
+        </div>
+
+        <div class="service-switcher" id="serviceSwitcher" role="tablist" aria-label="Dienst auswählen">
+          <span class="service-lens" id="serviceLens" aria-hidden="true"></span>
+          <button class="service is-active" type="button" role="tab" aria-selected="true" data-service="google" title="Google">
+            <span class="service-mark google-mark" aria-hidden="true">G</span>
+            <span class="visually-hidden">Google</span>
+          </button>
+          <button class="service" type="button" role="tab" aria-selected="false" data-service="chatgpt" title="ChatGPT">
+            <img class="service-mark chatgpt-mark" src="./openai-mark.svg" alt="">
+            <span class="visually-hidden">ChatGPT</span>
+          </button>
+          <button class="service" type="button" role="tab" aria-selected="false" data-service="claude" title="Claude">
+            <span class="service-mark claude-mark" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+            </span>
+            <span class="visually-hidden">Claude</span>
+          </button>
+        </div>
+
+        <form class="search-form" id="searchForm" autocomplete="off">
+          <input id="fileInput" type="file" hidden accept="image/*,.pdf,.txt,.doc,.docx">
+          <button class="attach-button" id="attachButton" type="button" aria-label="Bild oder Datei auswählen" title="Bild oder Datei auswählen"><span>+</span></button>
+          <label class="visually-hidden" for="searchInput">Suche</label>
+          <input id="searchInput" type="search" placeholder="Frag Google etwas" spellcheck="false" autofocus>
+        </form>
+        <p class="attachment" id="attachment" hidden></p>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
